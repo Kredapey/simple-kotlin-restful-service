@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*
 @RequestMapping("products")
 class ProductController (private val productService: ProductService) {
     @GetMapping
+    @ResponseStatus(HttpStatus.OK)
     fun getAll() = productService.findAll()
 
     @PostMapping
